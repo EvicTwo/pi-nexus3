@@ -3,10 +3,10 @@ FROM ubuntu
 RUN apt update
 RUN apt install -y wget gnupg2 vim 
 
-RUN echo 'deb [arch=all] https://nx-staging.sonatype.com/repository/community-apt-hosted/ bionic main' > /etc/apt/sources.list.d/sonatype-community.list
+RUN echo 'deb [arch=all] https://repo.sonatype.com/repository/community-apt-hosted/ bionic main' > /etc/apt/sources.list.d/sonatype-community.list
 RUN cat /etc/apt/sources.list.d/sonatype-community.list
- 
-RUN wget https://nx-staging.sonatype.com/repository/community-hosted/pki/deb-gpg/DEB-GPG-KEY-Sonatype.asc
+
+RUN wget https://repo.sonatype.com/repository/community-hosted/pki/deb-gpg/DEB-GPG-KEY-Sonatype.asc
 RUN apt-key add DEB-GPG-KEY-Sonatype.asc 
 
 RUN apt-get update
